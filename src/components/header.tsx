@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Box, Typography, Grid2 } from '@mui/material';
 import portpic from '../assets/jayportpic.jpg';
@@ -17,7 +16,7 @@ const Header: React.FC = () => {
            backgroundColor: "#f0f0f0",
            padding: 2,
           }}>
-        <Grid2 xs={4} display="flex" flexDirection="column" >
+        <Grid2 component="div"  sx={{ xs: 4, display: "flex", flexDirection: "column"}} >
           <Box component="img"
              sx={{
              width: '100%', // Full width of the container
@@ -31,7 +30,7 @@ const Header: React.FC = () => {
             >
           </Box>
         </Grid2>
-        <Grid2 item xs={4} display="flex" flexDirection="column" alignItems="center" sx={{ml:15}}>
+        <Grid2 component="div" sx={{  xs:4,  display:"flex", flexDirection:"column", alignItems:"center", ml:15}}>
             <Typography variant="h4" sx={{mb:4, fontWeight:"bold", textDecoration: "underline"}} >Contact Information</Typography>
           <Typography variant="h5" sx={{fontWeight:"bold"}}>Jay Jelaso</Typography>
           <Typography variant="h5"><Link href="mailto:jay.jelaso@gmail.com" style={{ color: "#1976d2" }}>jay.jelaso@gmail.com</Link></Typography>
@@ -43,7 +42,7 @@ const Header: React.FC = () => {
                 </Link>
           </Typography>
           </Grid2>
-        <Grid2 item xs={3} display="flex" flexDirection="column" alignItems="center"  sx={{ml:10}}>
+        <Grid2 component="div" sx={{ xs:3, display:"flex", flexDirection:"column", alignItems:"center",  ml:10 }}>
           <Typography variant="h4" align="right" sx={{mb:0, fontWeight:"bold", textDecoration: "underline"}}>Professional Software Developer</Typography>
           <Grid2
       container
@@ -54,7 +53,7 @@ const Header: React.FC = () => {
       }}
     >
       {/* Card 1 */}
-      <Grid2 xs={12} sm={6} md={4}>
+      <Grid2 component="div" sx={{ xs:12, sm:6, md:4 }}>
         <Card>
           {/* Image */}
           <CardMedia
@@ -78,7 +77,7 @@ const Header: React.FC = () => {
               Learn More
             </Link>
           </CardContent>
-        </Card>
+       </Card>
       </Grid2>
 
       {/* Card 2   */} 
