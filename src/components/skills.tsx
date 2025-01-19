@@ -40,7 +40,7 @@ const CenteredContainer = styled('div')({
 export default function Skills() {
   const [expanded, setExpanded] = useState<string | false>(false); // State for tracking the expanded panel
 
-  const handleChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+  const handleChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false); // Expand the clicked panel or close all
   };
 
