@@ -46,17 +46,24 @@ export default function ContactForm() {
           body: JSON.stringify(payload), // Send the payload
         }
       );
-alert ( response.ok)
+
       if (response.ok) {
-        alert("Message sent successfully!");
+        // Parse JSON response (if provided)
+        const responseData = await response.json();
+        console.log("Response data:", responseData);
+
+        // Display a success alert
+        alert(responseData.message || "Message sent successfully!");
         setFormData({ name: "", email: "", message: "" }); // Clear the form
       } else {
+        // Display an error alert for non-OK responses
+        const errorText = await response.text();
+        console.error("Server error:", errorText);
         alert("Failed to send message. Please try again.");
-        console.error("Server error:", await response.text());
       }
     } catch (error: any) {
-      alert("An error occurred while sending the message.");
       console.error("Error sending message:", error.message);
+      alert("An unexpected error occurred. Please try again later.");
     }
   };
 
